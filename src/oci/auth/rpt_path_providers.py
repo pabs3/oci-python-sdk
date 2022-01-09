@@ -7,7 +7,7 @@ import abc
 import os
 import logging
 
-from oci._vendor import requests
+import requests
 
 from .signers.instance_principals_security_token_signer import InstancePrincipalsSecurityTokenSigner
 

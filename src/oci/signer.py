@@ -11,10 +11,10 @@ import io
 import functools
 import os
 
-from oci._vendor import six
+import six
 from oci.util import record_body_position_for_rewind, rewind_body, back_up_body_calculate_stream_content_length, read_stream_for_signing
 
-from ._vendor import httpsig_cffi, requests
+import httpsig, requests
 from .exceptions import InvalidPrivateKey, MissingPrivateKeyPassphrase
 
 from cryptography.exceptions import UnsupportedAlgorithm
@@ -139,7 +139,7 @@ def inject_missing_headers(request, sign_body, enforce_content_headers):
 
 # HeaderSigner doesn't support private keys with passwords.
 # Patched since the constructor parses the key in __init__
-class _PatchedHeaderSigner(httpsig_cffi.sign.HeaderSigner):
+class _PatchedHeaderSigner(httpsig.sign.HeaderSigner):
     HEADER_SIGNER_TEMPLATE = 'Signature algorithm="rsa-sha256",headers="{}",keyId="{}",signature="%s",version="{}"'
 
     """Internal.  If you need to construct a Signer, use :class:`~.Signer` instead."""
@@ -149,7 +149,7 @@ class _PatchedHeaderSigner(httpsig_cffi.sign.HeaderSigner):
         self.hash_algorithm = "sha256"
 
         self._hash = None
-        self._rsahash = httpsig_cffi.utils.HASHES[self.hash_algorithm]
+        self._rsahash = httpsig.utils.HASHES[self.hash_algorithm]
 
         self._rsa_private = private_key
         self._rsa_public = self._rsa_private.public_key()

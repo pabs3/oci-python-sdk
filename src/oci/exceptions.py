@@ -5,8 +5,8 @@
 import platform
 import oci.util
 from .version import __version__
-from oci._vendor.requests.exceptions import RequestException as BaseRequestException
-from oci._vendor.requests.exceptions import ConnectTimeout as BaseConnectTimeout
+from requests.exceptions import RequestException as BaseRequestException
+from requests.exceptions import ConnectTimeout as BaseConnectTimeout
 CLIENT_VERSION = "Oracle-PythonSDK/{}".format(__version__)
 OS_VERSION = platform.platform()
 UPLOAD_MANAGER_DEBUG_INFORMATION_LOG = "Client Version: {}, OS Version: {}, See https://docs.oracle.com/iaas/Content/API/Concepts/sdk_troubleshooting.htm for common issues and steps to resolve them. If you need to contact support, or file a GitHub issue, please include this full error message.".format(CLIENT_VERSION, OS_VERSION)

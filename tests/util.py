@@ -10,9 +10,9 @@ import time
 import re
 import resource
 from contextlib import contextmanager
-from oci._vendor.requests.exceptions import Timeout
-from oci._vendor.requests.exceptions import ConnectionError
-from oci._vendor import six
+from requests.exceptions import Timeout
+from requests.exceptions import ConnectionError
+import six
 from . import test_config_container
 
 try:

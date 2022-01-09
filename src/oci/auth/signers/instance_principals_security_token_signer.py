@@ -7,9 +7,9 @@ from ..certificate_retriever import UrlBasedCertificateRetriever, INSTANCE_METAD
 from ..session_key_supplier import SessionKeySupplier
 from ..federation_client import X509FederationClient
 from .. import auth_utils
-from oci._vendor import requests
-from oci._vendor.requests.exceptions import HTTPError
-from oci._vendor.requests.exceptions import ConnectTimeout
+import requests
+from requests.exceptions import HTTPError
+from requests.exceptions import ConnectTimeout
 
 import oci.regions
 import logging

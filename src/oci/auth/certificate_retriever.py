@@ -4,13 +4,13 @@
 
 from cryptography import x509
 from cryptography.hazmat.backends import default_backend
-from oci._vendor import requests
-from oci._vendor.requests.exceptions import HTTPError
+import requests
+from requests.exceptions import HTTPError
 from oci.exceptions import ServiceError
 
 import oci.retry
 import os.path
-from oci._vendor import six
+import six
 import threading
 import logging
 import pprint

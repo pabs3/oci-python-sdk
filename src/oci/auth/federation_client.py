@@ -7,7 +7,7 @@ from .security_token_container import SecurityTokenContainer
 from cryptography.hazmat.primitives.serialization import Encoding, PublicFormat
 from cryptography.hazmat.primitives.hashes import SHA1
 
-from oci._vendor import requests
+import requests
 
 import oci.retry
 import oci.signer

@@ -7,8 +7,8 @@
 
 from ..exceptions import ServiceError, RequestException, ConnectTimeout
 from circuitbreaker import CircuitBreakerError
-from oci._vendor.requests.exceptions import Timeout
-from oci._vendor.requests.exceptions import ConnectionError as RequestsConnectionError
+from requests.exceptions import Timeout
+from requests.exceptions import ConnectionError as RequestsConnectionError
 import logging
 import threading
 

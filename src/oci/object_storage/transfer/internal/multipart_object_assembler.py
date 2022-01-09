@@ -17,10 +17,10 @@ from .buffered_part_reader import BufferedPartReader
 from ... import models
 from ....exceptions import ServiceError, MultipartUploadError
 from oci.exceptions import RequestException, ConnectTimeout
-from oci._vendor.requests.exceptions import Timeout, ConnectionError
-from oci._vendor.six.moves.queue import Queue
+from requests.exceptions import Timeout, ConnectionError
+from six.moves.queue import Queue
 from threading import Semaphore
-from oci._vendor import six
+import six
 from oci.fips import is_fips_mode
 from ....version import __version__
 
